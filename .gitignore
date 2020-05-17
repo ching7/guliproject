@@ -17,3 +17,5 @@ buildNumber.properties
 
 .idea
 **/.gitignore
+/renren-fast/target/
+/renren-generator/target/
