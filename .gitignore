@@ -14,7 +14,7 @@ buildNumber.properties
 
 **/.mvn
 **/target/
-
+*.iml
 .idea
 **/.gitignore
 /renren-fast/target/
