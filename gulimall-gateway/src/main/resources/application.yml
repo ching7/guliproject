@@ -10,13 +10,25 @@ spring:
           uri: https://www.qq.com
           predicates:
             - Query=url,qq
+        - id: product_router
+          ##lb: 代表 load balance 负载均衡
+          uri: lb://gulimall-product
+          ## 路径匹配断言
+          predicates:
+            - Path=/api/product/**
+          ## 路径重写
+          filters:
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
+        ##模糊路由匹配后置
         - id: admin_router
           ##lb: 代表 load balance 负载均衡
           uri: lb://renren-fast
           ## 路径匹配断言
           predicates:
             - Path=/api/**
+          ## 路径重写
           filters:
             - RewritePath=/api/(?<segment>/?.*),/renren-fast/$\{segment}
+
 ## 前端项目，/api
 ## http://localhost:88/api//captcha.jpg http://localhost:8080/renren-fast/captcha.jpg
