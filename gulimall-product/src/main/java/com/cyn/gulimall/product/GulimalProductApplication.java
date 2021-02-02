@@ -16,7 +16,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *          使用mapperScan
  *          sql映射文件位置
  *
- *
+ * 2、mybatis-plus逻辑删除功能
+ * 3.2.0版本以上可以省略
+ *  1、配置全局删除逻辑规则
+ *  2、配置逻辑删除组件
+ *  3、逻辑删除字段需要加上逻辑删除注解
  */
 @EnableDiscoveryClient
 @MapperScan("com.cyn.gulimall.product.dao")
