@@ -3,6 +3,7 @@ package com.cyn.gulimall.product;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -23,8 +24,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *  3、逻辑删除字段需要加上逻辑删除注解
  */
 @EnableDiscoveryClient
-@MapperScan("com.cyn.gulimall.product.dao")
 @SpringBootApplication
+@MapperScan("com.cyn.gulimall.product.dao")
 public class GulimalProductApplication {
 
     public static void main(String[] args) {
