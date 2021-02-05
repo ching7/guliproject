@@ -13,6 +13,14 @@ spring:
           uri: https://www.qq.com
           predicates:
             - Query=url,qq
+        - id: third_party_router
+          uri: lb://gulimall-thrid-party
+          ## 路径匹配断言
+          predicates:
+            - Path=/api/thirdparty/**
+          ## 路径重写
+          filters:
+            - RewritePath=/api/thirdparty(?<segment>/?.*),/$\{segment}
         - id: product_router
           ##lb: 代表 load balance 负载均衡
           uri: lb://gulimall-product
