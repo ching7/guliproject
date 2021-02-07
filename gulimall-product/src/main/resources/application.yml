@@ -10,7 +10,8 @@ spring:
     nacos:
       discovery:
         server-addr: 106.54.70.153:8848
-
+  main:
+    allow-bean-definition-overriding: true
 my#batis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:

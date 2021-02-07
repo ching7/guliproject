@@ -33,13 +33,13 @@ spring:
         ##模糊路由匹配后置xx
         - id: admin_router
           ##lb: 代表 load balance 负载均衡
-          uri: lb://renren-fast
+          uri: lb://renren-fast-web
           ## 路径匹配断言
           predicates:
             - Path=/api/**
           ## 路径重写
           filters:
-            - RewritePath=/api/(?<segment>/?.*),/renren-fast/$\{segment}
+            - RewritePath=/api/(?<segment>/?.*),/renren-fast-web/$\{segment}
 server:
   port: 88
 ## 前端项目，/api
